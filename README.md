@@ -67,4 +67,22 @@ get attr:
 aws sqs get-queue-attributes --queue-url x --attribute-names x
 ```
 
+- cp14
+one-time scaling action:
+```
+aws autoscaling put-scheduled-update-group-action --scheduled-action-name scale4 --auto-scaling-group-name nam --start-time "2016-01-01T12:00:00Z" --desired-capicity 4
+```
+recurrence scaling action:(every day 20:00 UTC)
+```
+aws autoscaling put-scheduled-update-group-action --scheduled-action-name scale2 --auto-scaling-group-name nam --recurrence "0 20 * * *" --desired-capicity 2
+```
+
+ScalingUpPolicy->ADjustmentType->Three properties:
+ChangeInCapacity, PercentChangeInCapacity, ExactCapacity
+
+using apache bench to test load balancer:
+```
+ab -n 1000 -c 2 $urlloadbalancer (1000 requests, 2 threads)
+```
+
 
