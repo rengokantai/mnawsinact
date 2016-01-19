@@ -48,3 +48,23 @@ aws ec2 deregister-image --image-id imgid
 aws ec2 delete-snapshot --snapshot-id id
 ```
 
+- cp12
+```
+aws s3api put-bucket-policy --bucket xx --policy file://link
+```
+using sqs:
+create a url2png app
+```
+aws s3 mb s3://name
+aws s3 website s3://name --index-document index.html --error-document error.html
+```
+create sqs:
+```
+aws sqs create-queue name
+```
+get attr:
+```
+aws sqs get-queue-attributes --queue-url x --attribute-names x
+```
+
+
