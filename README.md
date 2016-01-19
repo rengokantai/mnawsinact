@@ -28,3 +28,23 @@ flushing caches(after writing test, do this before doing reading test)
 echo 3 | tee /proc/sys/vm/drop_caches
 ```
 
+cp 11
+```
+aws ec2 terminate-instances --instance-ids $id
+```
+
+describe
+```
+aws ec2 describe-instances --filters "Name=tag:Name,Values=xx" Name=instance-state-code,Values=16" --query "Reservations[0].Instances[0].[InstanceId,PublicIpAddress,PrivateIpAddress,SubnetId]"
+```
+clean up
+```
+aws ec2 describe-images --owners self --query Images[0].[ImageId,BlockDeviceMappings[0].Ebs.SnapshotId]
+```
+```
+aws cloudformation delete-stack --stack-name xx
+aws cloudformation describe-stacks --stack-name xx
+aws ec2 deregister-image --image-id imgid
+aws ec2 delete-snapshot --snapshot-id id
+```
+
