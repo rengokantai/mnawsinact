@@ -1,4 +1,4 @@
-#### mnawsinaction
+#### mnawsinact
 
 cp7 s3
 basic commands
